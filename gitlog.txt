@@ -1,0 +1,394 @@
+user@lenovo:~/Kehitys$ mkdir Websivu
+user@lenovo:~/Kehitys$ cd Websivu
+user@lenovo:~/Kehitys/Websivu$ git init
+Initialized empty Git repository in /home/user/Kehitys/Websivu/.git/
+user@lenovo:~/Kehitys/Websivu$ touch main.html
+user@lenovo:~/Kehitys/Websivu$ touch style.css
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	main.html
+	style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "luotu perustiedot sivustoa varten"
+[master (root-commit) 16982db] luotu perustiedot sivustoa varten
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 main.html
+ create mode 100644 style.css
+user@lenovo:~/Kehitys/Websivu$ git checkout features
+error: pathspec 'features' did not match any file(s) known to git
+user@lenovo:~/Kehitys/Websivu$ code
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "luotu puu tiedostoon"
+[master 4d94716] luotu puu tiedostoon
+ 1 file changed, 12 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git checkout -b content
+Switched to a new branch 'content'
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch content
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch content
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty kuva"
+[content 09af268] lisätty kuva
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch content
+nothing to commit, working tree clean
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch content
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty h1 sekä p"
+[content 49c1f58] lisätty h1 sekä p
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch content
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ 
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "muutettu p ja lisätty ul"
+[content d5af593] muutettu p ja lisätty ul
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch content
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty li elementtiin linkki"
+[content 76f4e7c] lisätty li elementtiin linkki
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git checkout master
+Switched to branch 'master'
+user@lenovo:~/Kehitys/Websivu$ git merge content
+Updating 4d94716..76f4e7c
+Fast-forward
+ main.html | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch master
+nothing to commit, working tree clean
+user@lenovo:~/Kehitys/Websivu$ git checkout -b style
+Switched to a new branch 'style'
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch style
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "luotu yksi tyyli ja lisätty se"
+[style 65d7ed1] luotu yksi tyyli ja lisätty se
+ 2 files changed, 4 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch style
+nothing to commit, working tree clean
+user@lenovo:~/Kehitys/Websivu$ git checkout master
+Switched to branch 'master'
+user@lenovo:~/Kehitys/Websivu$ git branch -a
+  content
+* master
+  style
+user@lenovo:~/Kehitys/Websivu$ git merge style
+Updating 76f4e7c..65d7ed1
+Fast-forward
+ main.html | 1 +
+ style.css | 3 +++
+ 2 files changed, 4 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git remote add origin git@github.com:rekekki/Website.git
+user@lenovo:~/Kehitys/Websivu$ git remote -v
+origin	git@github.com:rekekki/Website.git (fetch)
+origin	git@github.com:rekekki/Website.git (push)
+user@lenovo:~/Kehitys/Websivu$ git push --set-upstream origin master
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (22/22), 2.31 KiB | 789.00 KiB/s, done.
+Total 22 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), done.
+To github.com:rekekki/Website.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+user@lenovo:~/Kehitys/Websivu$ git checkout
+Your branch is up to date with 'origin/master'.
+user@lenovo:~/Kehitys/Websivu$ git checkout -a
+error: unknown switch `a'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+user@lenovo:~/Kehitys/Websivu$ git checkout -b style
+fatal: A branch named 'style' already exists.
+user@lenovo:~/Kehitys/Websivu$ git checkout style
+Switched to branch 'style'
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch style
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty fontti main.html"
+[style abcabae] lisätty fontti main.html
+ 1 file changed, 1 insertion(+)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "luotu css sääntö fontille"
+[style e587c7f] luotu css sääntö fontille
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty css säännöt h1 sekä p, li"
+[style 206e26f] lisätty css säännöt h1 sekä p, li
+ 1 file changed, 9 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty taustaväri"
+[style 1979933] lisätty taustaväri
+ 1 file changed, 3 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty bodylle usea ominaisuus ja niille arvot"
+[style 475a491] lisätty bodylle usea ominaisuus ja niille arvot
+ 1 file changed, 7 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "lisätty h1 varjo sekä sijoitusarvoja"
+[style 4da7ff5] lisätty h1 varjo sekä sijoitusarvoja
+ 1 file changed, 4 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git add .
+user@lenovo:~/Kehitys/Websivu$ git commit -m "muokattu img käyttäytymään kuten block"
+[style e585073] muokattu img käyttäytymään kuten block
+ 1 file changed, 4 insertions(+)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch style
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@lenovo:~/Kehitys/Websivu$ git checkout style.css
+Updated 1 path from the index
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch style
+nothing to commit, working tree clean
+user@lenovo:~/Kehitys/Websivu$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+user@lenovo:~/Kehitys/Websivu$ git merge style
+Updating 65d7ed1..e585073
+Fast-forward
+ main.html |  1 +
+ style.css | 34 +++++++++++++++++++++++++++++++++-
+ 2 files changed, 34 insertions(+), 1 deletion(-)
+user@lenovo:~/Kehitys/Websivu$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 7 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+user@lenovo:~/Kehitys/Websivu$ git push
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (21/21), 2.21 KiB | 1.10 MiB/s, done.
+Total 21 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+To github.com:rekekki/Website.git
+   65d7ed1..e585073  master -> master
+user@lenovo:~/Kehitys/Websivu$ git log --stat | cat
+commit e5850735af7ae09e221488aa9bbdf336e513711f
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 08:32:06 2021 +0200
+
+    muokattu img käyttäytymään kuten block
+
+ style.css | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 4da7ff5b327f142a4e62d8c73a44fc55a4815da2
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 07:48:25 2021 +0200
+
+    lisätty h1 varjo sekä sijoitusarvoja
+
+ style.css | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 475a491e9003d1f86cc5b77917a962fa92b07824
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 07:45:34 2021 +0200
+
+    lisätty bodylle usea ominaisuus ja niille arvot
+
+ style.css | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 1979933c2d2b3727c75188394533a6e1ff0dd783
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 07:42:33 2021 +0200
+
+    lisätty taustaväri
+
+ style.css | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 206e26fd2d0b46660ed8a06b4510d33655c35ffc
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 07:30:31 2021 +0200
+
+    lisätty css säännöt h1 sekä p, li
+
+ style.css | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit e587c7faa0f261371c9c8f76ba6f6954b5c30a5c
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 07:28:29 2021 +0200
+
+    luotu css sääntö fontille
+
+ style.css | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit abcabaed17c118b1aa5f5f9c72ec40307cdae10a
+Author: rekekki <r2101k@pm.me>
+Date:   Wed Mar 10 07:26:02 2021 +0200
+
+    lisätty fontti main.html
+
+ main.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 65d7ed11fe05464f80bd2676183553a8b4200cf4
+Author: rekekki <r2101k@pm.me>
+Date:   Tue Mar 9 07:23:24 2021 +0200
+
+    luotu yksi tyyli ja lisätty se
+
+ main.html | 1 +
+ style.css | 3 +++
+ 2 files changed, 4 insertions(+)
+
+commit 76f4e7c43af90ab3b28eb3a70568e9fc93065737
+Author: rekekki <r2101k@pm.me>
+Date:   Tue Mar 9 06:38:59 2021 +0200
+
+    lisätty li elementtiin linkki
+
+ main.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d5af593e617edc2c652730a28b554696fcc31e48
+Author: rekekki <r2101k@pm.me>
+Date:   Tue Mar 9 06:34:03 2021 +0200
+
+    muutettu p ja lisätty ul
+
+ main.html | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 49c1f5827902a04e0b7940e2f0fa00f83506a04c
+Author: rekekki <r2101k@pm.me>
+Date:   Tue Mar 9 06:30:17 2021 +0200
+
+    lisätty h1 sekä p
+
+ main.html | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 09af2683ac7beab8873e2f62e34031024f0c684b
+Author: rekekki <r2101k@pm.me>
+Date:   Tue Mar 9 06:26:07 2021 +0200
+
+    lisätty kuva
+
+ main.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4d94716b047b0f7d8df5586eb1d3bc058a43002c
+Author: rekekki <r2101k@pm.me>
+Date:   Tue Mar 9 06:10:53 2021 +0200
+
+    luotu puu tiedostoon
+
+ main.html | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 16982db7cd6fbb2d487c63415e488891bde1a822
+Author: rekekki <r2101k@pm.me>
+Date:   Mon Mar 8 20:26:53 2021 +0200
+
+    luotu perustiedot sivustoa varten
+
+ main.html | 0
+ style.css | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
